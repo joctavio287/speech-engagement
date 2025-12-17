@@ -1,0 +1,53 @@
+1.1095 	WARNING 	psychopy.parallel has been imported but no parallel port driver found. Install either inpout32, inpoutx64 or dlportio
+2.2343 	INFO 	Loaded monitor calibration from ['2025_12_16 10:09']
+2.4013 	INFO 	Using renderer 'NVIDIA GeForce RTX 5070 Ti/PCIe/SSE2' for graphics
+2.4013 	INFO 	OpenGL version supported by driver is 4..
+2.4112 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=True, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000222539693F0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000022253969390>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=True, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000022253105D50>, multiSample=False, name='window1', numSamples=2, pos=[np.float64(0.0), np.float64(0.0)], screen=0, size=array([1920, 1080]), stencilBits=8, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+2.4112 	EXP 	window1: backgroundImage = ''
+2.4112 	EXP 	window1: backgroundFit = 'none'
+2.5753 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+2.5753 	EXP 	window1: recordFrameIntervals = False
+2.7401 	EXP 	window1: recordFrameIntervals = True
+2.9235 	EXP 	Screen (0) actual frame rate measured at 59.99Hz
+2.9235 	EXP 	window1: recordFrameIntervals = False
+8.8833 	INFO 	keyboard.Keyboard is using iohub backend.
+8.8833 	EXP 	audiobook_uncomitted_experiment: status = STARTED
+8.9536 	EXP 	Created instruction_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='instruction_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+8.9565 	EXP 	Created text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1.,  1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='text', opacity=1, ori=0.0, pos=array([0.19 , 0.115]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+9.0844 	INFO 	Loaded psychtoolbox audio version 3.0.19.696976569
+9.1037 	WARNING 	No default speaker specified in Preferences / Hardware, using first speaker found: Speakers (Realtek(R) Audio)
+9.1082 	INFO 	Created stream for speaker device: Speakers (Realtek(R) Audio) (2.0)
+9.1089 	EXP 	pip: sampleRate = 48000
+9.1090 	EXP 	pip: channels = None
+9.1137 	EXP 	Sound pip set volume 1.000
+9.1156 	EXP 	Created polygon = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+9.1199 	WARNING 	No default speaker specified in Preferences / Hardware, using first speaker found: Speakers (Realtek(R) Audio)
+9.1229 	INFO 	Created stream for speaker device: Speakers (Realtek(R) Audio) (2.0)
+9.1236 	EXP 	audiobook: sampleRate = 48000
+9.1237 	EXP 	audiobook: channels = None
+9.1279 	EXP 	Sound audiobook set volume 1.000
+9.1290 	EXP 	Created fixation = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-2.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='fixation', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+9.1293 	EXP 	Created question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='question', opacity=1, ori=0.0, pos=array([0. , 0.1]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.1344 	EXP 	Created Boton = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.025), italic=False, languageStyle='LTR', name='Boton', opacity=1, ori=0.0, pos=array([ 0.45, -0.45]), rgb=UNKNOWN, text='Hace click izquierdo para continuar\n', units='height', win=Window(...), wrapWidth=1)
+9.1388 	EXP 	Created spacebar_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='spacebar_text', opacity=1, ori=0.0, pos=array([0. , 0.1]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.1431 	WARNING 	No default speaker specified in Preferences / Hardware, using first speaker found: Speakers (Realtek(R) Audio)
+9.1460 	INFO 	Created stream for speaker device: Speakers (Realtek(R) Audio) (2.0)
+9.1468 	EXP 	pip: sampleRate = 48000
+9.1468 	EXP 	pip: channels = None
+9.1515 	EXP 	Sound pip set volume 1.000
+9.1527 	EXP 	Created polygon = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+9.1589 	EXP 	Created last_prompt_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='last_prompt_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+9.1627 	EXP 	Created congrats_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='congrats_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+0.0800 	EXP 	answer: autoLog = True
+0.0945 	INFO 	Keyboard events cleared
+0.0943 	EXP 	instruction_text: autoDraw = True
+0.0943 	EXP 	text: autoDraw = True
+6.6133 	EXP 	Device response: <KeyPress from None: t=6.610749899991788, value=escape, duration=None>
+6.6141 	DATA 	Keypress: escape
+6.7615 	EXP 	Device response: <KeyPress from None: t=6.610749899991788, value=escape, duration=0.1360720999946352>
+6.7615 	EXP 	audiobook_uncomitted_experiment: status = STOPPED
+6.7779 	EXP 	instruction_text: autoDraw = False
+6.7779 	EXP 	text: autoDraw = False
+6.7779 	EXP 	audiobook_uncomitted_experiment: status = STOPPED
+6.7802 	INFO 	saved data to 'C:\\Users\\jocta\\repos\\speech-engagement\\unengaged_audiobook_experiment\\data\\201360_audiobook_uncomitted_experiment_2025-12-16_19h19.20.323.csv'
+6.7805 	INFO 	saved data to C:\Users\jocta\repos\speech-engagement\unengaged_audiobook_experiment\data\201360_audiobook_uncomitted_experiment_2025-12-16_19h19.20.323.psydat

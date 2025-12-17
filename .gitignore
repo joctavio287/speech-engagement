@@ -1,1 +1,4 @@
+/utils/__pycache__/
+__pycache__/
+*.pyc
 audiobook_experiment\data

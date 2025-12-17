@@ -1,0 +1,236 @@
+1.1068 	WARNING 	psychopy.parallel has been imported but no parallel port driver found. Install either inpout32, inpoutx64 or dlportio
+2.1905 	INFO 	Loaded monitor calibration from ['2025_12_16 10:09']
+2.3499 	INFO 	Using renderer 'NVIDIA GeForce RTX 5070 Ti/PCIe/SSE2' for graphics
+2.3499 	INFO 	OpenGL version supported by driver is 4..
+2.3595 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=True, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000241087BF1C0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x00000241087BF160>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=True, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000024107FABB20>, multiSample=False, name='window1', numSamples=2, pos=[np.float64(0.0), np.float64(0.0)], screen=0, size=array([1920, 1080]), stencilBits=8, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+2.3595 	EXP 	window1: backgroundImage = ''
+2.3596 	EXP 	window1: backgroundFit = 'none'
+2.5239 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+2.5239 	EXP 	window1: recordFrameIntervals = False
+2.7136 	EXP 	window1: recordFrameIntervals = True
+2.8969 	EXP 	Screen (0) actual frame rate measured at 60.00Hz
+2.8969 	EXP 	window1: recordFrameIntervals = False
+8.8606 	INFO 	keyboard.Keyboard is using iohub backend.
+8.8606 	EXP 	audiobook_experiment: status = STARTED
+8.9352 	EXP 	Created instruction_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='instruction_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+9.0630 	INFO 	Loaded psychtoolbox audio version 3.0.19.696976569
+9.0822 	WARNING 	No default speaker specified in Preferences / Hardware, using first speaker found: Speakers (Realtek(R) Audio)
+9.0866 	INFO 	Created stream for speaker device: Speakers (Realtek(R) Audio) (2.0)
+9.0874 	EXP 	pip: sampleRate = 48000
+9.0874 	EXP 	pip: channels = None
+9.0923 	EXP 	Sound pip set volume 1.000
+9.0941 	EXP 	Created polygon = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+9.0985 	WARNING 	No default speaker specified in Preferences / Hardware, using first speaker found: Speakers (Realtek(R) Audio)
+9.1011 	INFO 	Created stream for speaker device: Speakers (Realtek(R) Audio) (2.0)
+9.1018 	EXP 	audiobook: sampleRate = 48000
+9.1018 	EXP 	audiobook: channels = None
+9.1060 	EXP 	Sound audiobook set volume 1.000
+9.1070 	EXP 	Created fixation = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='fixation', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+9.1073 	EXP 	Created question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='question', opacity=1, ori=0.0, pos=array([0. , 0.1]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.1116 	EXP 	Created Boton = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.025), italic=False, languageStyle='LTR', name='Boton', opacity=1, ori=0.0, pos=array([ 0.45, -0.45]), rgb=UNKNOWN, text='Hace click izquierdo para continuar\n', units='height', win=Window(...), wrapWidth=1)
+9.1161 	EXP 	Created spacebar_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='spacebar_text', opacity=1, ori=0.0, pos=array([0. , 0.1]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.1202 	WARNING 	No default speaker specified in Preferences / Hardware, using first speaker found: Speakers (Realtek(R) Audio)
+9.1228 	INFO 	Created stream for speaker device: Speakers (Realtek(R) Audio) (2.0)
+9.1235 	EXP 	pip: sampleRate = 48000
+9.1235 	EXP 	pip: channels = None
+9.1283 	EXP 	Sound pip set volume 1.000
+9.1293 	EXP 	Created polygon = ShapeStim(__class__=<class 'psychopy.visual.shape.ShapeStim'>, anchor=('center', 'center'), autoDraw=False, autoLog=True, closeShape=True, color=method-wrapper(...), colorSpace='rgb', contrast=None, depth=-1.0, draggable=False, fillColor=array([1, 1, 1]), fillColorSpace='rgb', fillRGB=array([1, 1, 1]), interpolate=True, lineColor=array([-1., -1., -1.]), lineColorSpace='rgb', lineRGB=array([-1, -1, -1]), lineWidth=1.0, name='polygon', opacity=1, ori=0.0, pos=array([0., 0.]), size=array([0.1, 0.1]), units='height', vertices=ndarray(...), win=Window(...), windingRule=None)
+9.1342 	EXP 	Created last_prompt_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='last_prompt_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+9.1380 	EXP 	Created congrats_text = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=np.float64(0.05), italic=False, languageStyle='LTR', name='congrats_text', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='height', win=Window(...), wrapWidth=1)
+0.0816 	EXP 	answer: autoLog = True
+0.0925 	INFO 	Keyboard events cleared
+0.0924 	EXP 	instruction_text: autoDraw = True
+7.7453 	EXP 	Device response: <KeyPress from None: t=7.739156499999808, value=space, duration=None>
+7.7484 	EXP 	Imported AudioBookLoop_pruebas.csv as conditions, 2 conditions, 4 params
+7.7485 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'Book': 'kafka', 'AudioFile': '..\\audiobook_stimuli\\stimuli_audiobook\\prueba.wav', 'Question': '¿Quiénes son los protagonistas de esta historia? \n\n Escribí una respuesta de hasta 10 palabras.', 'EndTrial': 'Apretá la barra espaciadora para continuar con el segundo cuento...', 'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+7.7486 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+7.7489 	EXP 	pip: sampleRate = 44100
+7.7517 	INFO 	Resampled audio from 44100Hz to 48000Hz using method 'default'.
+7.7519 	EXP 	Sound pip reached end of file
+7.7593 	EXP 	Playing sound pip on speaker Speakers (Realtek(R) Audio)
+7.7531 	DATA 	Keypress: space
+7.7595 	EXP 	instruction_text: autoDraw = False
+7.7595 	EXP 	polygon: autoDraw = True
+7.8597 	EXP 	Device response: <KeyPress from None: t=7.739156499999808, value=space, duration=0.11949830001685768>
+8.7613 	EXP 	Sound pip reached end of file
+8.7762 	EXP 	Sound pip reached end of file
+8.7771 	EXP 	audiobook: sampleRate = 44100
+8.7876 	INFO 	Resampled audio from 44100Hz to 48000Hz using method 'default'.
+8.7880 	EXP 	Sound audiobook reached end of file
+8.7928 	EXP 	Playing sound audiobook on speaker Speakers (Realtek(R) Audio)
+8.7928 	EXP 	polygon: autoDraw = False
+8.7928 	EXP 	polygon: autoDraw = False
+8.7928 	EXP 	fixation: autoDraw = True
+14.3625 	EXP 	Sound audiobook reached end of file
+14.3764 	EXP 	Sound audiobook reached end of file
+14.3930 	EXP 	fixation: autoDraw = False
+14.3930 	EXP 	fixation: autoDraw = False
+14.3930 	EXP 	question: height = np.float64(0.05)
+14.3930 	EXP 	question: height = np.float64(0.05)
+14.3930 	EXP 	question: height = np.float64(0.05)
+14.3930 	EXP 	question: text = '¿Quiénes son los protagonistas de esta historia? \n\n Escribí una respuesta de hasta 10 palabras.'
+14.3930 	EXP 	answer: placeholder = ''
+14.3930 	EXP 	question: autoDraw = True
+14.3930 	EXP 	Boton: autoDraw = True
+14.3930 	EXP 	answer: autoDraw = True
+17.9766 	DATA 	Keypress: o
+17.9787 	EXP 	Device response: <KeyPress from None: t=17.96288750000531, value=o, duration=None>
+18.0599 	DATA 	Keypress: c
+18.0618 	EXP 	Device response: <KeyPress from None: t=18.058856400020886, value=c, duration=None>
+18.0936 	EXP 	Device response: <KeyPress from None: t=17.96288750000531, value=o, duration=0.11950279999291524>
+18.1602 	EXP 	Device response: <KeyPress from None: t=18.058856400020886, value=c, duration=0.08805629998096265>
+18.3767 	DATA 	Keypress: t
+18.3786 	EXP 	Device response: <KeyPress from None: t=18.37109150001197, value=t, duration=None>
+18.4602 	EXP 	Device response: <KeyPress from None: t=18.37109150001197, value=t, duration=0.08750910000526346>
+18.8768 	DATA 	Keypress: a
+18.8789 	EXP 	Device response: <KeyPress from None: t=18.867111300001852, value=a, duration=None>
+19.1103 	EXP 	Device response: <KeyPress from None: t=18.867111300001852, value=a, duration=0.24086170000373386>
+19.2266 	DATA 	Keypress: v
+19.2285 	EXP 	Device response: <KeyPress from None: t=19.21924289999879, value=v, duration=None>
+19.3268 	EXP 	Device response: <KeyPress from None: t=19.21924289999879, value=v, duration=0.09556940000038594>
+19.3933 	DATA 	Keypress: i
+19.3948 	EXP 	Device response: <KeyPress from None: t=19.38694680001936, value=i, duration=None>
+19.4937 	EXP 	Device response: <KeyPress from None: t=19.38694680001936, value=i, duration=0.10426490000099875>
+19.5933 	DATA 	Keypress: o
+19.5938 	EXP 	Device response: <KeyPress from None: t=19.586378600011813, value=o, duration=None>
+19.7104 	EXP 	Device response: <KeyPress from None: t=19.586378600011813, value=o, duration=0.12052259998745285>
+19.7933 	DATA 	Keypress: return
+19.7938 	EXP 	Device response: <KeyPress from None: t=19.77893800000311, value=return, duration=None>
+19.9269 	EXP 	Device response: <KeyPress from None: t=19.77893800000311, value=return, duration=0.13603110000258312>
+20.7601 	DATA 	Keypress: backspace
+20.7607 	EXP 	Device response: <KeyPress from None: t=20.755112400016515, value=backspace, duration=None>
+20.8937 	EXP 	Device response: <KeyPress from None: t=20.755112400016515, value=backspace, duration=0.1361062999931164>
+22.2270 	DATA 	Mouse: Left button down, pos=(845,680)
+22.2431 	EXP 	question: autoDraw = False
+22.2431 	EXP 	Boton: autoDraw = False
+22.2431 	EXP 	answer: autoDraw = False
+22.2431 	EXP 	spacebar_text: height = np.float64(0.05)
+22.2431 	EXP 	spacebar_text: height = np.float64(0.05)
+22.2431 	EXP 	spacebar_text: height = np.float64(0.05)
+22.2431 	EXP 	spacebar_text: text = 'Apretá la barra espaciadora para continuar con el segundo cuento...'
+22.3102 	DATA 	Mouse:  Left button up, pos=(845,680)
+22.4766 	EXP 	spacebar_text: autoDraw = True
+22.7267 	INFO 	Keyboard events cleared
+24.7102 	EXP 	Device response: <KeyPress from None: t=24.699017900013132, value=space, duration=None>
+24.7105 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+24.7108 	EXP 	pip: sampleRate = 44100
+24.7124 	INFO 	Resampled audio from 44100Hz to 48000Hz using method 'default'.
+24.7125 	EXP 	Sound pip reached end of file
+24.7267 	EXP 	Playing sound pip on speaker Speakers (Realtek(R) Audio)
+24.7130 	DATA 	Keypress: space
+24.7267 	EXP 	spacebar_text: autoDraw = False
+24.7267 	EXP 	polygon: autoDraw = True
+24.8602 	EXP 	Device response: <KeyPress from None: t=24.699017900013132, value=space, duration=0.15229170001111925>
+25.7271 	EXP 	Sound pip reached end of file
+25.7433 	EXP 	Sound pip reached end of file
+25.7441 	EXP 	New trial (rep=0, index=1): <Trial 1 (1 in rep 0) data={'Book': 'lugones', 'AudioFile': '..\\audiobook_stimuli\\stimuli_audiobook\\prueba.wav', 'Question': '¿Cómo muere el protagonista de la historia? \n\n Escribí una respuesta de hasta 10 palabras', 'EndTrial': 'Apretá la barra espaciadora para continuar...', 'thisN': 1, 'thisTrialN': 1, 'thisRepN': 0}>
+25.7442 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+25.7445 	EXP 	pip: sampleRate = 44100
+25.7460 	INFO 	Resampled audio from 44100Hz to 48000Hz using method 'default'.
+25.7461 	EXP 	Sound pip reached end of file
+25.7599 	EXP 	Playing sound pip on speaker Speakers (Realtek(R) Audio)
+25.7600 	EXP 	polygon: autoDraw = False
+25.7600 	EXP 	polygon: autoDraw = False
+25.7600 	EXP 	polygon: autoDraw = True
+26.7631 	EXP 	Sound pip reached end of file
+26.7768 	EXP 	Sound pip reached end of file
+26.7777 	EXP 	audiobook: sampleRate = 44100
+26.7874 	INFO 	Resampled audio from 44100Hz to 48000Hz using method 'default'.
+26.7877 	EXP 	Sound audiobook reached end of file
+26.7934 	EXP 	Playing sound audiobook on speaker Speakers (Realtek(R) Audio)
+26.7934 	EXP 	polygon: autoDraw = False
+26.7934 	EXP 	polygon: autoDraw = False
+26.7934 	EXP 	fixation: autoDraw = True
+32.3607 	EXP 	Sound audiobook reached end of file
+32.3770 	EXP 	Sound audiobook reached end of file
+32.3936 	EXP 	fixation: autoDraw = False
+32.3936 	EXP 	fixation: autoDraw = False
+32.3936 	EXP 	question: height = np.float64(0.05)
+32.3936 	EXP 	question: height = np.float64(0.05)
+32.3936 	EXP 	question: height = np.float64(0.05)
+32.3936 	EXP 	question: text = '¿Cómo muere el protagonista de la historia? \n\n Escribí una respuesta de hasta 10 palabras'
+32.3936 	EXP 	answer: placeholder = ''
+32.3936 	EXP 	question: autoDraw = True
+32.3936 	EXP 	Boton: autoDraw = True
+32.3936 	EXP 	answer: autoDraw = True
+33.1271 	DATA 	Keypress: a
+33.1277 	EXP 	Device response: <KeyPress from None: t=33.115466500021284, value=a, duration=None>
+33.2604 	DATA 	Keypress: b
+33.2628 	EXP 	Device response: <KeyPress from None: t=33.25902710002265, value=b, duration=None>
+33.3275 	EXP 	Device response: <KeyPress from None: t=33.115466500021284, value=a, duration=0.19912459998158738>
+33.3937 	DATA 	Keypress: u
+33.3955 	EXP 	Device response: <KeyPress from None: t=33.38656620000256, value=u, duration=None>
+33.4272 	EXP 	Device response: <KeyPress from None: t=33.25902710002265, value=b, duration=0.15155629999935627>
+33.5273 	EXP 	Device response: <KeyPress from None: t=33.38656620000256, value=u, duration=0.12835529999574646>
+33.5436 	DATA 	Keypress: r
+33.5453 	EXP 	Device response: <KeyPress from None: t=33.53843740001321, value=r, duration=None>
+33.6274 	EXP 	Device response: <KeyPress from None: t=33.53843740001321, value=r, duration=0.08807399999932386>
+33.7271 	DATA 	Keypress: r
+33.7276 	EXP 	Device response: <KeyPress from None: t=33.722476599999936, value=r, duration=None>
+33.8112 	DATA 	Keypress: i
+33.8274 	EXP 	Device response: <KeyPress from None: t=33.81045820002328, value=i, duration=None>
+33.8274 	EXP 	Device response: <KeyPress from None: t=33.722476599999936, value=r, duration=0.10407580001628958>
+33.9439 	EXP 	Device response: <KeyPress from None: t=33.81045820002328, value=i, duration=0.12139789998764172>
+34.0605 	DATA 	Keypress: m
+34.0626 	EXP 	Device response: <KeyPress from None: t=34.05069880001247, value=m, duration=None>
+34.1607 	EXP 	Device response: <KeyPress from None: t=34.05069880001247, value=m, duration=0.09602349999477156>
+34.2279 	DATA 	Keypress: i
+34.2438 	EXP 	Device response: <KeyPress from None: t=34.2272515000077, value=i, duration=None>
+34.3440 	EXP 	Device response: <KeyPress from None: t=34.2272515000077, value=i, duration=0.11162670000339858>
+34.3605 	DATA 	Keypress: e
+34.3648 	EXP 	Device response: <KeyPress from None: t=34.3548861000163, value=e, duration=None>
+34.4439 	EXP 	Device response: <KeyPress from None: t=34.3548861000163, value=e, duration=0.08767549999174662>
+34.4772 	DATA 	Keypress: n
+34.4790 	EXP 	Device response: <KeyPress from None: t=34.4665542000148, value=n, duration=None>
+34.5774 	EXP 	Device response: <KeyPress from None: t=34.4665542000148, value=n, duration=0.09604119998402894>
+34.6273 	DATA 	Keypress: t
+34.6278 	EXP 	Device response: <KeyPress from None: t=34.618434500007425, value=t, duration=None>
+34.7273 	EXP 	Device response: <KeyPress from None: t=34.618434500007425, value=t, duration=0.09655760001624003>
+34.7437 	DATA 	Keypress: o
+34.7442 	EXP 	Device response: <KeyPress from None: t=34.7305297999992, value=o, duration=None>
+34.9276 	EXP 	Device response: <KeyPress from None: t=34.7305297999992, value=o, duration=0.1921788000036031>
+35.1438 	DATA 	Keypress: return
+35.1443 	EXP 	Device response: <KeyPress from None: t=35.13868500001263, value=return, duration=None>
+35.2608 	EXP 	Device response: <KeyPress from None: t=35.13868500001263, value=return, duration=0.12037260000943206>
+36.3271 	DATA 	Keypress: backspace
+36.3278 	EXP 	Device response: <KeyPress from None: t=36.32338040001923, value=backspace, duration=None>
+36.4441 	EXP 	Device response: <KeyPress from None: t=36.32338040001923, value=backspace, duration=0.11908800000674091>
+36.7437 	DATA 	Mouse: Left button down, pos=(845,680)
+36.7604 	EXP 	question: autoDraw = False
+36.7604 	EXP 	Boton: autoDraw = False
+36.7604 	EXP 	answer: autoDraw = False
+36.7604 	EXP 	spacebar_text: height = np.float64(0.05)
+36.7604 	EXP 	spacebar_text: height = np.float64(0.05)
+36.7604 	EXP 	spacebar_text: height = np.float64(0.05)
+36.7604 	EXP 	spacebar_text: text = 'Apretá la barra espaciadora para continuar...'
+36.8107 	DATA 	Mouse:  Left button up, pos=(855,681)
+36.9937 	EXP 	spacebar_text: autoDraw = True
+37.2438 	INFO 	Keyboard events cleared
+38.4608 	EXP 	Device response: <KeyPress from None: t=38.4590148999996, value=space, duration=None>
+38.4612 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+38.4615 	EXP 	pip: sampleRate = 44100
+38.4630 	INFO 	Resampled audio from 44100Hz to 48000Hz using method 'default'.
+38.4631 	EXP 	Sound pip reached end of file
+38.4771 	EXP 	Playing sound pip on speaker Speakers (Realtek(R) Audio)
+38.4636 	DATA 	Keypress: space
+38.4771 	EXP 	spacebar_text: autoDraw = False
+38.4771 	EXP 	polygon: autoDraw = True
+38.6107 	EXP 	Device response: <KeyPress from None: t=38.4590148999996, value=space, duration=0.13630450001801364>
+39.4732 	EXP 	Sound pip reached end of file
+39.4772 	EXP 	Sound pip reached end of file
+39.4938 	EXP 	polygon: autoDraw = False
+39.4938 	EXP 	polygon: autoDraw = False
+39.4938 	EXP 	last_prompt_text: autoDraw = True
+39.6773 	INFO 	Keyboard events cleared
+41.1274 	EXP 	Device response: <KeyPress from None: t=41.11447970001609, value=num_5, duration=None>
+41.1283 	DATA 	Keypress: num_5
+41.1443 	INFO 	Keyboard events cleared
+41.1441 	EXP 	last_prompt_text: autoDraw = False
+41.1441 	EXP 	congrats_text: autoDraw = True
+41.2442 	EXP 	Device response: <KeyPress from None: t=41.11447970001609, value=num_5, duration=0.12880780000705272>
+42.3108 	EXP 	Device response: <KeyPress from None: t=42.30681750000804, value=space, duration=None>
+42.3111 	DATA 	Keypress: space
+42.3272 	EXP 	congrats_text: autoDraw = False
+42.3273 	EXP 	audiobook_experiment: status = STOPPED
+42.3299 	INFO 	saved data to 'C:\\Users\\jocta\\repos\\speech-engagement\\engaged_audiobook_experiment\\data\\160445_audiobook_experiment_2025-12-16_18h18.04.959.csv'
+42.3304 	INFO 	saved data to C:\Users\jocta\repos\speech-engagement\engaged_audiobook_experiment\data\160445_audiobook_experiment_2025-12-16_18h18.04.959.psydat
