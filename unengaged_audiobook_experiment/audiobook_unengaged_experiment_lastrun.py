@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.2.3),
-    on December 16, 2025, at 19:28
+    on December 18, 2025, at 22:02
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -426,7 +426,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         'white', 'orange', 
         'red', 'blue', 
         'green', 'yellow', 
-        'cyan'
+        'cyan', 'pink'
     ] 
     fixation_color_ = 'white'
     
