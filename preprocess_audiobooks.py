@@ -44,7 +44,7 @@ audio_books = sorted(
 )
 output_file_associations = {}
 for j, book in enumerate(audio_books):
-    output_file = OUTPUT_DIR / book.stem
+    output_file = OUTPUT_DIR / f"{book.stem}.wav"
     if book.stem in CUT_TIMES:
         vocal_isolation(output_file, output_file)
     start_time, end_time = CUT_TIMES.get(book.stem, (0, None))
