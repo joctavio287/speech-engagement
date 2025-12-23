@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2025.2.3),
-    on December 18, 2025, at 22:02
+    on December 23, 2025, at 15:53
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -40,7 +40,7 @@ deviceManager = hardware.DeviceManager()
 _thisDir = os.path.dirname(os.path.abspath(__file__))
 # store info about the experiment session
 psychopyVersion = '2025.2.3'
-expName = 'audiobook_uncomitted_experiment'  # from the Builder filename that created this script
+expName = 'audiobook_experiment'  # from the Builder filename that created this script
 expVersion = ''
 # a list of functions to run when the experiment ends (starts off blank)
 runAtExit = []
@@ -133,7 +133,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version=expVersion,
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='C:\\Users\\jocta\\repos\\speech-engagement\\unengaged_audiobook_experiment\\audiobook_unengaged_experiment_lastrun.py',
+        originPath='C:\\Users\\User\\repos\\speech-engagement\\unengaged_audiobook_experiment\\audiobook_unengaged_experiment_lastrun.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -271,6 +271,15 @@ def setupDevices(expInfo, thisExp, win):
         deviceManager.addDevice(
             deviceClass='keyboard', deviceName='defaultKeyboard', backend='iohub'
         )
+    # initialize 'Realtek'
+    deviceManager.addDevice(
+        deviceName='Realtek',
+        index=4.0,
+        name='Realtek HD Audio 2nd output (Realtek(R) Audio)',
+        deviceClass='psychopy.hardware.speaker.SpeakerDevice',
+        resample=True,
+        latencyClass=1,
+    )
     # return True if completed successfully
     return True
 
@@ -384,33 +393,26 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # Start Code - component code to be run after the window creation
     
     # --- Initialize components for Routine "Instructions" ---
+    key_resp_instruction = keyboard.Keyboard(deviceName='defaultKeyboard')
     instruction_text = visual.TextStim(win=win, name='instruction_text',
-        text='En el siguiente experimento deberas identificar cuántas veces aparece la cruz de fijación en color        .\n\nCuando estes listo/a apretá la barra espaciadora: vas a escuchar unos pitidos y luego comenzará el experimento.',
+        text='En el siguiente experimento vas a escuchar dos audiolibros de 5 minutos cada uno.\n\nPor favor, ponete cómodo/a e intenta sostener la mirada en la cruz de fijación que aparecerá en el centro de la pantalla.\n\nCuando estes listo/a apretá ESPACIO: vas a escuchar unos pitidos y luego comenzará el experimento.',
         font='Arial',
         pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
-    text = visual.TextStim(win=win, name='text',
-        text='                                                                                                                                                                                 azul',
-        font='Arial',
-        pos=(0.17, 0.085), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
-        color=(-1.0000, -1.0000, 1.0000), colorSpace='rgb', opacity=None, 
-        languageStyle='LTR',
         depth=-1.0);
-    key_resp_instruction = keyboard.Keyboard(deviceName='defaultKeyboard')
     
     # --- Initialize components for Routine "Bips" ---
     # set audio backend
     sound.Sound.backend = 'ptb'
-    pip = sound.Sound(
+    bip = sound.Sound(
         'A', 
         secs=-1, 
         stereo=True, 
         hamming=True, 
-        speaker=None,    name='pip'
+        speaker='Realtek',    name='bip'
     )
-    pip.setVolume(1.0)
+    bip.setVolume(1.0)
     polygon = visual.ShapeStim(
         win=win, name='polygon', vertices='cross',
         size=(0.1, 0.1),
@@ -420,7 +422,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         opacity=None, depth=-1.0, interpolate=True)
     
     # --- Initialize components for Routine "AudioBook" ---
-    # Run 'Begin Experiment' code from code
+    # Run 'Begin Experiment' code from code_audiobook
     frame_change = 20
     fixation_possible_colors = [
         'white', 'orange', 
@@ -429,13 +431,12 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         'cyan', 'pink'
     ] 
     fixation_color_ = 'white'
-    
     audiobook = sound.Sound(
         'A', 
         secs=-1, 
         stereo=True, 
         hamming=False, 
-        speaker=None,    name='audiobook'
+        speaker='Realtek',    name='audiobook'
     )
     audiobook.setVolume(1.0)
     fixation = visual.ShapeStim(
@@ -446,60 +447,15 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         colorSpace='rgb', lineColor='black', fillColor='white',
         opacity=None, depth=-2.0, interpolate=True)
     
-    # --- Initialize components for Routine "Questionary" ---
-    question = visual.TextStim(win=win, name='question',
-        text='',
-        font='Arial',
-        pos=(0, .1), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
-        color='white', colorSpace='rgb', opacity=None, 
-        languageStyle='LTR',
-        depth=0.0);
-    Boton = visual.TextStim(win=win, name='Boton',
-        text='Hace click izquierdo para continuar\n',
-        font='Arial',
-        pos=(.45, -.45), draggable=False, height=0.025, wrapWidth=None, ori=0.0, 
-        color='white', colorSpace='rgb', opacity=None, 
-        languageStyle='LTR',
-        depth=-1.0);
-    answer = visual.TextBox2(
-         win, text=None, placeholder=None, font='Arial',
-         ori=0.0, pos=(0, -.2), draggable=False,      letterHeight=0.05,
-         size=(0.5, 0.5), borderWidth=1.0,
-         color='white', colorSpace='rgb',
-         opacity=None,
-         bold=False, italic=False,
-         lineSpacing=1.2, speechPoint=None,
-         padding=0.0, alignment='center',
-         anchor='center', overflow='visible',
-         fillColor=None, borderColor=None,
-         flipHoriz=False, flipVert=False, languageStyle='LTR',
-         editable=True,
-         name='answer',
-         depth=-2, autoLog=True,
-    )
-    mouse = event.Mouse(win=win)
-    x, y = [None, None]
-    mouse.mouseClock = core.Clock()
-    
-    # --- Initialize components for Routine "SpacebarContinue" ---
-    spacebar_text = visual.TextStim(win=win, name='spacebar_text',
-        text='',
-        font='Arial',
-        pos=(0, 0.1), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
-        color='white', colorSpace='rgb', opacity=None, 
-        languageStyle='LTR',
-        depth=0.0);
-    spacebar_response = keyboard.Keyboard(deviceName='defaultKeyboard')
-    
     # --- Initialize components for Routine "Bips" ---
-    pip = sound.Sound(
+    bip = sound.Sound(
         'A', 
         secs=-1, 
         stereo=True, 
         hamming=True, 
-        speaker=None,    name='pip'
+        speaker='Realtek',    name='bip'
     )
-    pip.setVolume(1.0)
+    bip.setVolume(1.0)
     polygon = visual.ShapeStim(
         win=win, name='polygon', vertices='cross',
         size=(0.1, 0.1),
@@ -508,25 +464,60 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         colorSpace='rgb', lineColor='black', fillColor='white',
         opacity=None, depth=-1.0, interpolate=True)
     
+    # --- Initialize components for Routine "Questionary" ---
+    end_audiobook1 = keyboard.Keyboard(deviceName='defaultKeyboard')
+    question_text = visual.TextStim(win=win, name='question_text',
+        text='',
+        font='Arial',
+        pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=-1.0);
+    textbox = visual.TextBox2(
+         win, text=None, placeholder='Escribí con los números del teclado tu respuesta', font='Arial',
+         ori=0.0, pos=(0, 0), draggable=False,      letterHeight=0.05,
+         size=(0.5, 0.5), borderWidth=2.0,
+         color='white', colorSpace='rgb',
+         opacity=None,
+         bold=False, italic=False,
+         lineSpacing=1.0, speechPoint=None,
+         padding=0.0, alignment='center',
+         anchor='center', overflow='visible',
+         fillColor=None, borderColor=None,
+         flipHoriz=False, flipVert=False, languageStyle='LTR',
+         editable=True,
+         name='textbox',
+         depth=-2, autoLog=True,
+    )
+    
+    # --- Initialize components for Routine "SpacebarContinue" ---
+    spacebar_response = keyboard.Keyboard(deviceName='defaultKeyboard')
+    spacebar_prompt = visual.TextStim(win=win, name='spacebar_prompt',
+        text='',
+        font='Arial',
+        pos=(0, 0.1), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=-2.0);
+    
     # --- Initialize components for Routine "LastPrompt" ---
+    key_resp = keyboard.Keyboard(deviceName='defaultKeyboard')
     last_prompt_text = visual.TextStim(win=win, name='last_prompt_text',
         text='¡Listo! \n\n¿Qué tan largo te pareció el experimento?\n\n\nPresioná un número del 1 al 5 para continuar...',
         font='Arial',
         pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
-    key_resp = keyboard.Keyboard(deviceName='defaultKeyboard')
+        depth=-1.0);
     
     # --- Initialize components for Routine "GoodBye" ---
     congrats_text = visual.TextStim(win=win, name='congrats_text',
-        text='¡Felicitaciones! \n\nTerminaste el experimento.\n\n\nApretá la barra espaciadora para finalizar el experimento...\n',
+        text='¡Felicitaciones!  \n\nTerminaste el experimento.\n\n\n',
         font='Arial',
         pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
-    key_resp_end = keyboard.Keyboard(deviceName='defaultKeyboard')
     
     # create some handy timers
     
@@ -562,7 +553,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # create an object to store info about Routine Instructions
     Instructions = data.Routine(
         name='Instructions',
-        components=[instruction_text, text, key_resp_instruction],
+        components=[key_resp_instruction, instruction_text],
     )
     Instructions.status = NOT_STARTED
     continueRoutine = True
@@ -602,74 +593,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *instruction_text* updates
-        
-        # if instruction_text is starting this frame...
-        if instruction_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            instruction_text.frameNStart = frameN  # exact frame index
-            instruction_text.tStart = t  # local t and not account for scr refresh
-            instruction_text.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(instruction_text, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'instruction_text.started')
-            # update status
-            instruction_text.status = STARTED
-            instruction_text.setAutoDraw(True)
-        
-        # if instruction_text is active this frame...
-        if instruction_text.status == STARTED:
-            # update params
-            pass
-        
-        # if instruction_text is stopping this frame...
-        if instruction_text.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > instruction_text.tStartRefresh + key_resp_instruction.status == FINISHED-frameTolerance:
-                # keep track of stop time/frame for later
-                instruction_text.tStop = t  # not accounting for scr refresh
-                instruction_text.tStopRefresh = tThisFlipGlobal  # on global time
-                instruction_text.frameNStop = frameN  # exact frame index
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'instruction_text.stopped')
-                # update status
-                instruction_text.status = FINISHED
-                instruction_text.setAutoDraw(False)
-        
-        # *text* updates
-        
-        # if text is starting this frame...
-        if text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            text.frameNStart = frameN  # exact frame index
-            text.tStart = t  # local t and not account for scr refresh
-            text.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(text, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'text.started')
-            # update status
-            text.status = STARTED
-            text.setAutoDraw(True)
-        
-        # if text is active this frame...
-        if text.status == STARTED:
-            # update params
-            pass
-        
-        # if text is stopping this frame...
-        if text.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > text.tStartRefresh + key_resp_instruction.status == FINISHED-frameTolerance:
-                # keep track of stop time/frame for later
-                text.tStop = t  # not accounting for scr refresh
-                text.tStopRefresh = tThisFlipGlobal  # on global time
-                text.frameNStop = frameN  # exact frame index
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'text.stopped')
-                # update status
-                text.status = FINISHED
-                text.setAutoDraw(False)
-        
         # *key_resp_instruction* updates
         waitOnFlip = False
         
@@ -697,6 +620,39 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 key_resp_instruction.duration = _key_resp_instruction_allKeys[-1].duration
                 # a response ends the routine
                 continueRoutine = False
+        
+        # *instruction_text* updates
+        
+        # if instruction_text is starting this frame...
+        if instruction_text.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+            # keep track of start time/frame for later
+            instruction_text.frameNStart = frameN  # exact frame index
+            instruction_text.tStart = t  # local t and not account for scr refresh
+            instruction_text.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(instruction_text, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'instruction_text.started')
+            # update status
+            instruction_text.status = STARTED
+            instruction_text.setAutoDraw(True)
+        
+        # if instruction_text is active this frame...
+        if instruction_text.status == STARTED:
+            # update params
+            pass
+        
+        # if instruction_text is stopping this frame...
+        if instruction_text.status == STARTED:
+            if bool(key_resp_instruction.status == FINISHED):
+                # keep track of stop time/frame for later
+                instruction_text.tStop = t  # not accounting for scr refresh
+                instruction_text.tStopRefresh = tThisFlipGlobal  # on global time
+                instruction_text.frameNStop = frameN  # exact frame index
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'instruction_text.stopped')
+                # update status
+                instruction_text.status = FINISHED
+                instruction_text.setAutoDraw(False)
         
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -789,7 +745,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # set up handler to look after randomisation of conditions etc
         trials_bip1 = data.TrialHandler2(
             name='trials_bip1',
-            nReps=1.0, 
+            nReps=10.0, 
             method='sequential', 
             extraInfo=expInfo, 
             originPath=-1, 
@@ -825,14 +781,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # create an object to store info about Routine Bips
             Bips = data.Routine(
                 name='Bips',
-                components=[pip, polygon],
+                components=[bip, polygon],
             )
             Bips.status = NOT_STARTED
             continueRoutine = True
             # update component parameters for each repeat
-            pip.setSound('../audiobook_stimuli/stimuli_audiobook/bip.wav', hamming=True)
-            pip.setVolume(1.0, log=False)
-            pip.seek(0)
+            bip.setSound('../audiobook_stimuli/bip.wav', hamming=True)
+            bip.setVolume(1.0, log=False)
+            bip.seek(0)
             # store start times for Bips
             Bips.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             Bips.tStart = globalClock.getTime(format='float')
@@ -867,37 +823,37 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *pip* updates
+                # *bip* updates
                 
-                # if pip is starting this frame...
-                if pip.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+                # if bip is starting this frame...
+                if bip.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
                     # keep track of start time/frame for later
-                    pip.frameNStart = frameN  # exact frame index
-                    pip.tStart = t  # local t and not account for scr refresh
-                    pip.tStartRefresh = tThisFlipGlobal  # on global time
+                    bip.frameNStart = frameN  # exact frame index
+                    bip.tStart = t  # local t and not account for scr refresh
+                    bip.tStartRefresh = tThisFlipGlobal  # on global time
                     # add timestamp to datafile
-                    thisExp.addData('pip.started', tThisFlipGlobal)
+                    thisExp.addData('bip.started', tThisFlipGlobal)
                     # update status
-                    pip.status = STARTED
-                    pip.play(when=win)  # sync with win flip
+                    bip.status = STARTED
+                    bip.play(when=win)  # sync with win flip
                 
-                # if pip is stopping this frame...
-                if pip.status == STARTED:
-                    if bool(False) or pip.isFinished:
+                # if bip is stopping this frame...
+                if bip.status == STARTED:
+                    if bool(False) or bip.isFinished:
                         # keep track of stop time/frame for later
-                        pip.tStop = t  # not accounting for scr refresh
-                        pip.tStopRefresh = tThisFlipGlobal  # on global time
-                        pip.frameNStop = frameN  # exact frame index
+                        bip.tStop = t  # not accounting for scr refresh
+                        bip.tStopRefresh = tThisFlipGlobal  # on global time
+                        bip.frameNStop = frameN  # exact frame index
                         # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'pip.stopped')
+                        thisExp.timestampOnFlip(win, 'bip.stopped')
                         # update status
-                        pip.status = FINISHED
-                        pip.stop()
+                        bip.status = FINISHED
+                        bip.stop()
                 
                 # *polygon* updates
                 
                 # if polygon is starting this frame...
-                if polygon.status == NOT_STARTED and pip.status == STARTED:
+                if polygon.status == NOT_STARTED and bip.status == STARTED:
                     # keep track of start time/frame for later
                     polygon.frameNStart = frameN  # exact frame index
                     polygon.tStart = t  # local t and not account for scr refresh
@@ -916,7 +872,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 
                 # if polygon is stopping this frame...
                 if polygon.status == STARTED:
-                    if bool(pip.status == FINISHED):
+                    if bool(bip.status == FINISHED):
                         # keep track of stop time/frame for later
                         polygon.tStop = t  # not accounting for scr refresh
                         polygon.tStopRefresh = tThisFlipGlobal  # on global time
@@ -969,7 +925,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             Bips.tStop = globalClock.getTime(format='float')
             Bips.tStopRefresh = tThisFlipGlobal
             thisExp.addData('Bips.stopped', Bips.tStop)
-            pip.pause()  # ensure sound has stopped at end of Routine
+            bip.pause()  # ensure sound has stopped at end of Routine
             # the Routine "Bips" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             # mark thisTrials_bip1 as finished
@@ -987,7 +943,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 trials_bip1.status = STARTED
             thisExp.nextEntry()
             
-        # completed 1.0 repeats of 'trials_bip1'
+        # completed 10.0 repeats of 'trials_bip1'
         trials_bip1.status = FINISHED
         
         if thisSession is not None:
@@ -1003,14 +959,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         AudioBook.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
-        # Run 'Begin Routine' code from code
+        # Run 'Begin Routine' code from code_audiobook
         current_frame = win.getActualFrameRate()
         current_frame = 60 if current_frame is None else current_frame
         # Save data
         thisExp.addData('monitor_frameRate', current_frame)
         thisExp.addData('time_per_frame_sec', 1/current_frame) 
         thisExp.addData('duration_40_frames_sec', 40 * (1/current_frame)) 
-        audiobook.setSound(AudioFile, hamming=False)
+        audiobook.setSound(audio_filename, hamming=False)
         audiobook.setVolume(1.0, log=False)
         audiobook.seek(0)
         # store start times for AudioBook
@@ -1046,7 +1002,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             tThisFlipGlobal = win.getFutureFlipTime(clock=None)
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
-            # Run 'Each Frame' code from code
+            # Run 'Each Frame' code from code_audiobook
             if audiobook.status == FINISHED:
                 continue_routine = False
             
@@ -1165,405 +1121,16 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # the Routine "AudioBook" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         
-        # --- Prepare to start Routine "Questionary" ---
-        # create an object to store info about Routine Questionary
-        Questionary = data.Routine(
-            name='Questionary',
-            components=[question, Boton, answer, mouse],
-        )
-        Questionary.status = NOT_STARTED
-        continueRoutine = True
-        # update component parameters for each repeat
-        question.setText('¿Cuántas veces estuvo la cruz en color azul?')
-        answer.reset()
-        answer.setText('')
-        answer.setPlaceholder('')
-        # setup some python lists for storing info about the mouse
-        mouse.x = []
-        mouse.y = []
-        mouse.leftButton = []
-        mouse.midButton = []
-        mouse.rightButton = []
-        mouse.time = []
-        gotValidClick = False  # until a click is received
-        # store start times for Questionary
-        Questionary.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-        Questionary.tStart = globalClock.getTime(format='float')
-        Questionary.status = STARTED
-        thisExp.addData('Questionary.started', Questionary.tStart)
-        Questionary.maxDuration = None
-        # keep track of which components have finished
-        QuestionaryComponents = Questionary.components
-        for thisComponent in Questionary.components:
-            thisComponent.tStart = None
-            thisComponent.tStop = None
-            thisComponent.tStartRefresh = None
-            thisComponent.tStopRefresh = None
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        # reset timers
-        t = 0
-        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-        frameN = -1
-        
-        # --- Run Routine "Questionary" ---
-        thisExp.currentRoutine = Questionary
-        Questionary.forceEnded = routineForceEnded = not continueRoutine
-        while continueRoutine:
-            # if trial has changed, end Routine now
-            if hasattr(thisAudiobook_trial, 'status') and thisAudiobook_trial.status == STOPPING:
-                continueRoutine = False
-            # get current time
-            t = routineTimer.getTime()
-            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
-            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *question* updates
-            
-            # if question is starting this frame...
-            if question.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
-                # keep track of start time/frame for later
-                question.frameNStart = frameN  # exact frame index
-                question.tStart = t  # local t and not account for scr refresh
-                question.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(question, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'question.started')
-                # update status
-                question.status = STARTED
-                question.setAutoDraw(True)
-            
-            # if question is active this frame...
-            if question.status == STARTED:
-                # update params
-                pass
-            
-            # if question is stopping this frame...
-            if question.status == STARTED:
-                # is it time to stop? (based on local clock)
-                if tThisFlip > mouse.status == FINISHED-frameTolerance:
-                    # keep track of stop time/frame for later
-                    question.tStop = t  # not accounting for scr refresh
-                    question.tStopRefresh = tThisFlipGlobal  # on global time
-                    question.frameNStop = frameN  # exact frame index
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'question.stopped')
-                    # update status
-                    question.status = FINISHED
-                    question.setAutoDraw(False)
-            
-            # *Boton* updates
-            
-            # if Boton is starting this frame...
-            if Boton.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                # keep track of start time/frame for later
-                Boton.frameNStart = frameN  # exact frame index
-                Boton.tStart = t  # local t and not account for scr refresh
-                Boton.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(Boton, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'Boton.started')
-                # update status
-                Boton.status = STARTED
-                Boton.setAutoDraw(True)
-            
-            # if Boton is active this frame...
-            if Boton.status == STARTED:
-                # update params
-                pass
-            
-            # *answer* updates
-            
-            # if answer is starting this frame...
-            if answer.status == NOT_STARTED and question.status == STARTED:
-                # keep track of start time/frame for later
-                answer.frameNStart = frameN  # exact frame index
-                answer.tStart = t  # local t and not account for scr refresh
-                answer.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(answer, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'answer.started')
-                # update status
-                answer.status = STARTED
-                answer.setAutoDraw(True)
-            
-            # if answer is active this frame...
-            if answer.status == STARTED:
-                # update params
-                pass
-            
-            # if answer is stopping this frame...
-            if answer.status == STARTED:
-                # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > answer.tStartRefresh + mouse.status == FINISHED-frameTolerance:
-                    # keep track of stop time/frame for later
-                    answer.tStop = t  # not accounting for scr refresh
-                    answer.tStopRefresh = tThisFlipGlobal  # on global time
-                    answer.frameNStop = frameN  # exact frame index
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'answer.stopped')
-                    # update status
-                    answer.status = FINISHED
-                    answer.setAutoDraw(False)
-            # *mouse* updates
-            
-            # if mouse is starting this frame...
-            if mouse.status == NOT_STARTED and t >= 0.0-frameTolerance:
-                # keep track of start time/frame for later
-                mouse.frameNStart = frameN  # exact frame index
-                mouse.tStart = t  # local t and not account for scr refresh
-                mouse.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(mouse, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.addData('mouse.started', t)
-                # update status
-                mouse.status = STARTED
-                mouse.mouseClock.reset()
-                prevButtonState = mouse.getPressed()  # if button is down already this ISN'T a new click
-            if mouse.status == STARTED:  # only update if started and not finished!
-                buttons = mouse.getPressed()
-                if buttons != prevButtonState:  # button state changed?
-                    prevButtonState = buttons
-                    if sum(buttons) > 0:  # state changed to a new click
-                        pass
-                        x, y = mouse.getPos()
-                        mouse.x.append(float(x))
-                        mouse.y.append(float(y))
-                        buttons = mouse.getPressed()
-                        mouse.leftButton.append(buttons[0])
-                        mouse.midButton.append(buttons[1])
-                        mouse.rightButton.append(buttons[2])
-                        mouse.time.append(mouse.mouseClock.getTime())
-                        
-                        continueRoutine = False  # end routine on response
-            
-            # check for quit (typically the Esc key)
-            if defaultKeyboard.getKeys(keyList=["escape"]):
-                thisExp.status = FINISHED
-            if thisExp.status == FINISHED or endExpNow:
-                endExperiment(thisExp, win=win)
-                return
-            # pause experiment here if requested
-            if thisExp.status == PAUSED:
-                pauseExperiment(
-                    thisExp=thisExp, 
-                    win=win, 
-                    timers=[routineTimer, globalClock], 
-                    currentRoutine=Questionary,
-                )
-                # skip the frame we paused on
-                continue
-            
-            # has a Component requested the Routine to end?
-            if not continueRoutine:
-                Questionary.forceEnded = routineForceEnded = True
-            # has the Routine been forcibly ended?
-            if Questionary.forceEnded or routineForceEnded:
-                break
-            # has every Component finished?
-            continueRoutine = False
-            for thisComponent in Questionary.components:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # --- Ending Routine "Questionary" ---
-        for thisComponent in Questionary.components:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        # store stop times for Questionary
-        Questionary.tStop = globalClock.getTime(format='float')
-        Questionary.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('Questionary.stopped', Questionary.tStop)
-        audiobook_trials.addData('answer.text',answer.text)
-        # store data for audiobook_trials (TrialHandler)
-        audiobook_trials.addData('mouse.x', mouse.x)
-        audiobook_trials.addData('mouse.y', mouse.y)
-        audiobook_trials.addData('mouse.leftButton', mouse.leftButton)
-        audiobook_trials.addData('mouse.midButton', mouse.midButton)
-        audiobook_trials.addData('mouse.rightButton', mouse.rightButton)
-        audiobook_trials.addData('mouse.time', mouse.time)
-        # the Routine "Questionary" was not non-slip safe, so reset the non-slip timer
-        routineTimer.reset()
-        
-        # --- Prepare to start Routine "SpacebarContinue" ---
-        # create an object to store info about Routine SpacebarContinue
-        SpacebarContinue = data.Routine(
-            name='SpacebarContinue',
-            components=[spacebar_text, spacebar_response],
-        )
-        SpacebarContinue.status = NOT_STARTED
-        continueRoutine = True
-        # update component parameters for each repeat
-        spacebar_text.setText(EndTrial)
-        # create starting attributes for spacebar_response
-        spacebar_response.keys = []
-        spacebar_response.rt = []
-        _spacebar_response_allKeys = []
-        # store start times for SpacebarContinue
-        SpacebarContinue.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-        SpacebarContinue.tStart = globalClock.getTime(format='float')
-        SpacebarContinue.status = STARTED
-        thisExp.addData('SpacebarContinue.started', SpacebarContinue.tStart)
-        SpacebarContinue.maxDuration = None
-        # keep track of which components have finished
-        SpacebarContinueComponents = SpacebarContinue.components
-        for thisComponent in SpacebarContinue.components:
-            thisComponent.tStart = None
-            thisComponent.tStop = None
-            thisComponent.tStartRefresh = None
-            thisComponent.tStopRefresh = None
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        # reset timers
-        t = 0
-        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-        frameN = -1
-        
-        # --- Run Routine "SpacebarContinue" ---
-        thisExp.currentRoutine = SpacebarContinue
-        SpacebarContinue.forceEnded = routineForceEnded = not continueRoutine
-        while continueRoutine:
-            # if trial has changed, end Routine now
-            if hasattr(thisAudiobook_trial, 'status') and thisAudiobook_trial.status == STOPPING:
-                continueRoutine = False
-            # get current time
-            t = routineTimer.getTime()
-            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
-            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *spacebar_text* updates
-            
-            # if spacebar_text is starting this frame...
-            if spacebar_text.status == NOT_STARTED and tThisFlip >= 0.25-frameTolerance:
-                # keep track of start time/frame for later
-                spacebar_text.frameNStart = frameN  # exact frame index
-                spacebar_text.tStart = t  # local t and not account for scr refresh
-                spacebar_text.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(spacebar_text, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'spacebar_text.started')
-                # update status
-                spacebar_text.status = STARTED
-                spacebar_text.setAutoDraw(True)
-            
-            # if spacebar_text is active this frame...
-            if spacebar_text.status == STARTED:
-                # update params
-                pass
-            
-            # if spacebar_text is stopping this frame...
-            if spacebar_text.status == STARTED:
-                # is it time to stop? (based on global clock, using actual start)
-                if tThisFlipGlobal > spacebar_text.tStartRefresh + spacebar_response.status == FINISHED-frameTolerance:
-                    # keep track of stop time/frame for later
-                    spacebar_text.tStop = t  # not accounting for scr refresh
-                    spacebar_text.tStopRefresh = tThisFlipGlobal  # on global time
-                    spacebar_text.frameNStop = frameN  # exact frame index
-                    # add timestamp to datafile
-                    thisExp.timestampOnFlip(win, 'spacebar_text.stopped')
-                    # update status
-                    spacebar_text.status = FINISHED
-                    spacebar_text.setAutoDraw(False)
-            
-            # *spacebar_response* updates
-            waitOnFlip = False
-            
-            # if spacebar_response is starting this frame...
-            if spacebar_response.status == NOT_STARTED and tThisFlip >= .5-frameTolerance:
-                # keep track of start time/frame for later
-                spacebar_response.frameNStart = frameN  # exact frame index
-                spacebar_response.tStart = t  # local t and not account for scr refresh
-                spacebar_response.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(spacebar_response, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'spacebar_response.started')
-                # update status
-                spacebar_response.status = STARTED
-                # keyboard checking is just starting
-                waitOnFlip = True
-                win.callOnFlip(spacebar_response.clock.reset)  # t=0 on next screen flip
-                win.callOnFlip(spacebar_response.clearEvents, eventType='keyboard')  # clear events on next screen flip
-            if spacebar_response.status == STARTED and not waitOnFlip:
-                theseKeys = spacebar_response.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
-                _spacebar_response_allKeys.extend(theseKeys)
-                if len(_spacebar_response_allKeys):
-                    spacebar_response.keys = _spacebar_response_allKeys[-1].name  # just the last key pressed
-                    spacebar_response.rt = _spacebar_response_allKeys[-1].rt
-                    spacebar_response.duration = _spacebar_response_allKeys[-1].duration
-                    # a response ends the routine
-                    continueRoutine = False
-            
-            # check for quit (typically the Esc key)
-            if defaultKeyboard.getKeys(keyList=["escape"]):
-                thisExp.status = FINISHED
-            if thisExp.status == FINISHED or endExpNow:
-                endExperiment(thisExp, win=win)
-                return
-            # pause experiment here if requested
-            if thisExp.status == PAUSED:
-                pauseExperiment(
-                    thisExp=thisExp, 
-                    win=win, 
-                    timers=[routineTimer, globalClock], 
-                    currentRoutine=SpacebarContinue,
-                )
-                # skip the frame we paused on
-                continue
-            
-            # has a Component requested the Routine to end?
-            if not continueRoutine:
-                SpacebarContinue.forceEnded = routineForceEnded = True
-            # has the Routine been forcibly ended?
-            if SpacebarContinue.forceEnded or routineForceEnded:
-                break
-            # has every Component finished?
-            continueRoutine = False
-            for thisComponent in SpacebarContinue.components:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # --- Ending Routine "SpacebarContinue" ---
-        for thisComponent in SpacebarContinue.components:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        # store stop times for SpacebarContinue
-        SpacebarContinue.tStop = globalClock.getTime(format='float')
-        SpacebarContinue.tStopRefresh = tThisFlipGlobal
-        thisExp.addData('SpacebarContinue.stopped', SpacebarContinue.tStop)
-        # check responses
-        if spacebar_response.keys in ['', [], None]:  # No response was made
-            spacebar_response.keys = None
-        audiobook_trials.addData('spacebar_response.keys',spacebar_response.keys)
-        if spacebar_response.keys != None:  # we had a response
-            audiobook_trials.addData('spacebar_response.rt', spacebar_response.rt)
-            audiobook_trials.addData('spacebar_response.duration', spacebar_response.duration)
-        # the Routine "SpacebarContinue" was not non-slip safe, so reset the non-slip timer
-        routineTimer.reset()
-        
         # set up handler to look after randomisation of conditions etc
         trials_bip2 = data.TrialHandler2(
             name='trials_bip2',
-            nReps=1.0, 
+            nReps=10.0, 
             method='sequential', 
             extraInfo=expInfo, 
             originPath=-1, 
             trialList=[None], 
             seed=None, 
-            isTrials=True, 
+            isTrials=False, 
         )
         thisExp.addLoop(trials_bip2)  # add the loop to the experiment
         thisTrials_bip2 = trials_bip2.trialList[0]  # so we can initialise stimuli with some values
@@ -1571,9 +1138,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if thisTrials_bip2 != None:
             for paramName in thisTrials_bip2:
                 globals()[paramName] = thisTrials_bip2[paramName]
-        if thisSession is not None:
-            # if running in a Session with a Liaison client, send data up to now
-            thisSession.sendExperimentData()
         
         for thisTrials_bip2 in trials_bip2:
             trials_bip2.status = STARTED
@@ -1581,9 +1145,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 thisTrials_bip2.status = STARTED
             currentLoop = trials_bip2
             thisExp.timestampOnFlip(win, 'thisRow.t', format=globalClock.format)
-            if thisSession is not None:
-                # if running in a Session with a Liaison client, send data up to now
-                thisSession.sendExperimentData()
             # abbreviate parameter names if possible (e.g. rgb = thisTrials_bip2.rgb)
             if thisTrials_bip2 != None:
                 for paramName in thisTrials_bip2:
@@ -1593,14 +1154,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # create an object to store info about Routine Bips
             Bips = data.Routine(
                 name='Bips',
-                components=[pip, polygon],
+                components=[bip, polygon],
             )
             Bips.status = NOT_STARTED
             continueRoutine = True
             # update component parameters for each repeat
-            pip.setSound('../audiobook_stimuli/stimuli_audiobook/bip.wav', hamming=True)
-            pip.setVolume(1.0, log=False)
-            pip.seek(0)
+            bip.setSound('../audiobook_stimuli/bip.wav', hamming=True)
+            bip.setVolume(1.0, log=False)
+            bip.seek(0)
             # store start times for Bips
             Bips.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
             Bips.tStart = globalClock.getTime(format='float')
@@ -1635,37 +1196,37 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
                 # update/draw components on each frame
                 
-                # *pip* updates
+                # *bip* updates
                 
-                # if pip is starting this frame...
-                if pip.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+                # if bip is starting this frame...
+                if bip.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
                     # keep track of start time/frame for later
-                    pip.frameNStart = frameN  # exact frame index
-                    pip.tStart = t  # local t and not account for scr refresh
-                    pip.tStartRefresh = tThisFlipGlobal  # on global time
+                    bip.frameNStart = frameN  # exact frame index
+                    bip.tStart = t  # local t and not account for scr refresh
+                    bip.tStartRefresh = tThisFlipGlobal  # on global time
                     # add timestamp to datafile
-                    thisExp.addData('pip.started', tThisFlipGlobal)
+                    thisExp.addData('bip.started', tThisFlipGlobal)
                     # update status
-                    pip.status = STARTED
-                    pip.play(when=win)  # sync with win flip
+                    bip.status = STARTED
+                    bip.play(when=win)  # sync with win flip
                 
-                # if pip is stopping this frame...
-                if pip.status == STARTED:
-                    if bool(False) or pip.isFinished:
+                # if bip is stopping this frame...
+                if bip.status == STARTED:
+                    if bool(False) or bip.isFinished:
                         # keep track of stop time/frame for later
-                        pip.tStop = t  # not accounting for scr refresh
-                        pip.tStopRefresh = tThisFlipGlobal  # on global time
-                        pip.frameNStop = frameN  # exact frame index
+                        bip.tStop = t  # not accounting for scr refresh
+                        bip.tStopRefresh = tThisFlipGlobal  # on global time
+                        bip.frameNStop = frameN  # exact frame index
                         # add timestamp to datafile
-                        thisExp.timestampOnFlip(win, 'pip.stopped')
+                        thisExp.timestampOnFlip(win, 'bip.stopped')
                         # update status
-                        pip.status = FINISHED
-                        pip.stop()
+                        bip.status = FINISHED
+                        bip.stop()
                 
                 # *polygon* updates
                 
                 # if polygon is starting this frame...
-                if polygon.status == NOT_STARTED and pip.status == STARTED:
+                if polygon.status == NOT_STARTED and bip.status == STARTED:
                     # keep track of start time/frame for later
                     polygon.frameNStart = frameN  # exact frame index
                     polygon.tStart = t  # local t and not account for scr refresh
@@ -1684,7 +1245,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 
                 # if polygon is stopping this frame...
                 if polygon.status == STARTED:
-                    if bool(pip.status == FINISHED):
+                    if bool(bip.status == FINISHED):
                         # keep track of stop time/frame for later
                         polygon.tStop = t  # not accounting for scr refresh
                         polygon.tStopRefresh = tThisFlipGlobal  # on global time
@@ -1737,7 +1298,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             Bips.tStop = globalClock.getTime(format='float')
             Bips.tStopRefresh = tThisFlipGlobal
             thisExp.addData('Bips.stopped', Bips.tStop)
-            pip.pause()  # ensure sound has stopped at end of Routine
+            bip.pause()  # ensure sound has stopped at end of Routine
             # the Routine "Bips" was not non-slip safe, so reset the non-slip timer
             routineTimer.reset()
             # mark thisTrials_bip2 as finished
@@ -1753,14 +1314,375 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 )
                 # once done pausing, restore running status
                 trials_bip2.status = STARTED
-            thisExp.nextEntry()
-            
-        # completed 1.0 repeats of 'trials_bip2'
+        # completed 10.0 repeats of 'trials_bip2'
         trials_bip2.status = FINISHED
         
-        if thisSession is not None:
-            # if running in a Session with a Liaison client, send data up to now
-            thisSession.sendExperimentData()
+        
+        # --- Prepare to start Routine "Questionary" ---
+        # create an object to store info about Routine Questionary
+        Questionary = data.Routine(
+            name='Questionary',
+            components=[end_audiobook1, question_text, textbox],
+        )
+        Questionary.status = NOT_STARTED
+        continueRoutine = True
+        # update component parameters for each repeat
+        # create starting attributes for end_audiobook1
+        end_audiobook1.keys = []
+        end_audiobook1.rt = []
+        _end_audiobook1_allKeys = []
+        question_text.setText('¿Cuántas veces apareció la cruz en color azul?\n\n\n\n\n\n\n\n\nPresiona ESPACIO para continuar')
+        textbox.reset()
+        # store start times for Questionary
+        Questionary.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        Questionary.tStart = globalClock.getTime(format='float')
+        Questionary.status = STARTED
+        thisExp.addData('Questionary.started', Questionary.tStart)
+        Questionary.maxDuration = None
+        # keep track of which components have finished
+        QuestionaryComponents = Questionary.components
+        for thisComponent in Questionary.components:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "Questionary" ---
+        thisExp.currentRoutine = Questionary
+        Questionary.forceEnded = routineForceEnded = not continueRoutine
+        while continueRoutine:
+            # if trial has changed, end Routine now
+            if hasattr(thisAudiobook_trial, 'status') and thisAudiobook_trial.status == STOPPING:
+                continueRoutine = False
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *end_audiobook1* updates
+            waitOnFlip = False
+            
+            # if end_audiobook1 is starting this frame...
+            if end_audiobook1.status == NOT_STARTED and tThisFlip >= .5-frameTolerance:
+                # keep track of start time/frame for later
+                end_audiobook1.frameNStart = frameN  # exact frame index
+                end_audiobook1.tStart = t  # local t and not account for scr refresh
+                end_audiobook1.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(end_audiobook1, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'end_audiobook1.started')
+                # update status
+                end_audiobook1.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(end_audiobook1.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(end_audiobook1.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if end_audiobook1.status == STARTED and not waitOnFlip:
+                theseKeys = end_audiobook1.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
+                _end_audiobook1_allKeys.extend(theseKeys)
+                if len(_end_audiobook1_allKeys):
+                    end_audiobook1.keys = _end_audiobook1_allKeys[-1].name  # just the last key pressed
+                    end_audiobook1.rt = _end_audiobook1_allKeys[-1].rt
+                    end_audiobook1.duration = _end_audiobook1_allKeys[-1].duration
+                    # a response ends the routine
+                    continueRoutine = False
+            
+            # *question_text* updates
+            
+            # if question_text is starting this frame...
+            if question_text.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
+                # keep track of start time/frame for later
+                question_text.frameNStart = frameN  # exact frame index
+                question_text.tStart = t  # local t and not account for scr refresh
+                question_text.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(question_text, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'question_text.started')
+                # update status
+                question_text.status = STARTED
+                question_text.setAutoDraw(True)
+            
+            # if question_text is active this frame...
+            if question_text.status == STARTED:
+                # update params
+                pass
+            
+            # if question_text is stopping this frame...
+            if question_text.status == STARTED:
+                # is it time to stop? (based on local clock)
+                if tThisFlip > end_audiobook1.status == FINISHED-frameTolerance:
+                    # keep track of stop time/frame for later
+                    question_text.tStop = t  # not accounting for scr refresh
+                    question_text.tStopRefresh = tThisFlipGlobal  # on global time
+                    question_text.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'question_text.stopped')
+                    # update status
+                    question_text.status = FINISHED
+                    question_text.setAutoDraw(False)
+            
+            # *textbox* updates
+            
+            # if textbox is starting this frame...
+            if textbox.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                textbox.frameNStart = frameN  # exact frame index
+                textbox.tStart = t  # local t and not account for scr refresh
+                textbox.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(textbox, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'textbox.started')
+                # update status
+                textbox.status = STARTED
+                textbox.setAutoDraw(True)
+            
+            # if textbox is active this frame...
+            if textbox.status == STARTED:
+                # update params
+                pass
+            
+            # if textbox is stopping this frame...
+            if textbox.status == STARTED:
+                if bool(end_audiobook1.status == FINISHED):
+                    # keep track of stop time/frame for later
+                    textbox.tStop = t  # not accounting for scr refresh
+                    textbox.tStopRefresh = tThisFlipGlobal  # on global time
+                    textbox.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'textbox.stopped')
+                    # update status
+                    textbox.status = FINISHED
+                    textbox.setAutoDraw(False)
+            
+            # check for quit (typically the Esc key)
+            if defaultKeyboard.getKeys(keyList=["escape"]):
+                thisExp.status = FINISHED
+            if thisExp.status == FINISHED or endExpNow:
+                endExperiment(thisExp, win=win)
+                return
+            # pause experiment here if requested
+            if thisExp.status == PAUSED:
+                pauseExperiment(
+                    thisExp=thisExp, 
+                    win=win, 
+                    timers=[routineTimer, globalClock], 
+                    currentRoutine=Questionary,
+                )
+                # skip the frame we paused on
+                continue
+            
+            # has a Component requested the Routine to end?
+            if not continueRoutine:
+                Questionary.forceEnded = routineForceEnded = True
+            # has the Routine been forcibly ended?
+            if Questionary.forceEnded or routineForceEnded:
+                break
+            # has every Component finished?
+            continueRoutine = False
+            for thisComponent in Questionary.components:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "Questionary" ---
+        for thisComponent in Questionary.components:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # store stop times for Questionary
+        Questionary.tStop = globalClock.getTime(format='float')
+        Questionary.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('Questionary.stopped', Questionary.tStop)
+        # check responses
+        if end_audiobook1.keys in ['', [], None]:  # No response was made
+            end_audiobook1.keys = None
+        audiobook_trials.addData('end_audiobook1.keys',end_audiobook1.keys)
+        if end_audiobook1.keys != None:  # we had a response
+            audiobook_trials.addData('end_audiobook1.rt', end_audiobook1.rt)
+            audiobook_trials.addData('end_audiobook1.duration', end_audiobook1.duration)
+        audiobook_trials.addData('textbox.text',textbox.text)
+        # the Routine "Questionary" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
+        
+        # --- Prepare to start Routine "SpacebarContinue" ---
+        # create an object to store info about Routine SpacebarContinue
+        SpacebarContinue = data.Routine(
+            name='SpacebarContinue',
+            components=[spacebar_response, spacebar_prompt],
+        )
+        SpacebarContinue.status = NOT_STARTED
+        continueRoutine = True
+        # update component parameters for each repeat
+        # Run 'Begin Routine' code from code_spacebar
+        audiobook_number = audiobook_trials.thisN + 1
+        if audiobook_number==len(audiobook_trials.trialList):
+            spacebar_text = "Presioná ESPACIO para finalizar"
+        else:
+            spacebar_text = "Presioná ESPACIO para escuchar la siguiente historia"
+        # create starting attributes for spacebar_response
+        spacebar_response.keys = []
+        spacebar_response.rt = []
+        _spacebar_response_allKeys = []
+        spacebar_prompt.setText(spacebar_text
+        )
+        # store start times for SpacebarContinue
+        SpacebarContinue.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        SpacebarContinue.tStart = globalClock.getTime(format='float')
+        SpacebarContinue.status = STARTED
+        thisExp.addData('SpacebarContinue.started', SpacebarContinue.tStart)
+        SpacebarContinue.maxDuration = None
+        # keep track of which components have finished
+        SpacebarContinueComponents = SpacebarContinue.components
+        for thisComponent in SpacebarContinue.components:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "SpacebarContinue" ---
+        thisExp.currentRoutine = SpacebarContinue
+        SpacebarContinue.forceEnded = routineForceEnded = not continueRoutine
+        while continueRoutine:
+            # if trial has changed, end Routine now
+            if hasattr(thisAudiobook_trial, 'status') and thisAudiobook_trial.status == STOPPING:
+                continueRoutine = False
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *spacebar_response* updates
+            waitOnFlip = False
+            
+            # if spacebar_response is starting this frame...
+            if spacebar_response.status == NOT_STARTED and tThisFlip >= .5-frameTolerance:
+                # keep track of start time/frame for later
+                spacebar_response.frameNStart = frameN  # exact frame index
+                spacebar_response.tStart = t  # local t and not account for scr refresh
+                spacebar_response.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(spacebar_response, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'spacebar_response.started')
+                # update status
+                spacebar_response.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(spacebar_response.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(spacebar_response.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if spacebar_response.status == STARTED and not waitOnFlip:
+                theseKeys = spacebar_response.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
+                _spacebar_response_allKeys.extend(theseKeys)
+                if len(_spacebar_response_allKeys):
+                    spacebar_response.keys = _spacebar_response_allKeys[-1].name  # just the last key pressed
+                    spacebar_response.rt = _spacebar_response_allKeys[-1].rt
+                    spacebar_response.duration = _spacebar_response_allKeys[-1].duration
+                    # a response ends the routine
+                    continueRoutine = False
+            
+            # *spacebar_prompt* updates
+            
+            # if spacebar_prompt is starting this frame...
+            if spacebar_prompt.status == NOT_STARTED and tThisFlip >= 0.25-frameTolerance:
+                # keep track of start time/frame for later
+                spacebar_prompt.frameNStart = frameN  # exact frame index
+                spacebar_prompt.tStart = t  # local t and not account for scr refresh
+                spacebar_prompt.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(spacebar_prompt, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'spacebar_prompt.started')
+                # update status
+                spacebar_prompt.status = STARTED
+                spacebar_prompt.setAutoDraw(True)
+            
+            # if spacebar_prompt is active this frame...
+            if spacebar_prompt.status == STARTED:
+                # update params
+                pass
+            
+            # if spacebar_prompt is stopping this frame...
+            if spacebar_prompt.status == STARTED:
+                # is it time to stop? (based on global clock, using actual start)
+                if tThisFlipGlobal > spacebar_prompt.tStartRefresh + spacebar_response.status == FINISHED-frameTolerance:
+                    # keep track of stop time/frame for later
+                    spacebar_prompt.tStop = t  # not accounting for scr refresh
+                    spacebar_prompt.tStopRefresh = tThisFlipGlobal  # on global time
+                    spacebar_prompt.frameNStop = frameN  # exact frame index
+                    # add timestamp to datafile
+                    thisExp.timestampOnFlip(win, 'spacebar_prompt.stopped')
+                    # update status
+                    spacebar_prompt.status = FINISHED
+                    spacebar_prompt.setAutoDraw(False)
+            
+            # check for quit (typically the Esc key)
+            if defaultKeyboard.getKeys(keyList=["escape"]):
+                thisExp.status = FINISHED
+            if thisExp.status == FINISHED or endExpNow:
+                endExperiment(thisExp, win=win)
+                return
+            # pause experiment here if requested
+            if thisExp.status == PAUSED:
+                pauseExperiment(
+                    thisExp=thisExp, 
+                    win=win, 
+                    timers=[routineTimer, globalClock], 
+                    currentRoutine=SpacebarContinue,
+                )
+                # skip the frame we paused on
+                continue
+            
+            # has a Component requested the Routine to end?
+            if not continueRoutine:
+                SpacebarContinue.forceEnded = routineForceEnded = True
+            # has the Routine been forcibly ended?
+            if SpacebarContinue.forceEnded or routineForceEnded:
+                break
+            # has every Component finished?
+            continueRoutine = False
+            for thisComponent in SpacebarContinue.components:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "SpacebarContinue" ---
+        for thisComponent in SpacebarContinue.components:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # store stop times for SpacebarContinue
+        SpacebarContinue.tStop = globalClock.getTime(format='float')
+        SpacebarContinue.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('SpacebarContinue.stopped', SpacebarContinue.tStop)
+        # check responses
+        if spacebar_response.keys in ['', [], None]:  # No response was made
+            spacebar_response.keys = None
+        audiobook_trials.addData('spacebar_response.keys',spacebar_response.keys)
+        if spacebar_response.keys != None:  # we had a response
+            audiobook_trials.addData('spacebar_response.rt', spacebar_response.rt)
+            audiobook_trials.addData('spacebar_response.duration', spacebar_response.duration)
+        # the Routine "SpacebarContinue" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
         # mark thisAudiobook_trial as finished
         if hasattr(thisAudiobook_trial, 'status'):
             thisAudiobook_trial.status = FINISHED
@@ -1787,7 +1709,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # create an object to store info about Routine LastPrompt
     LastPrompt = data.Routine(
         name='LastPrompt',
-        components=[last_prompt_text, key_resp],
+        components=[key_resp, last_prompt_text],
     )
     LastPrompt.status = NOT_STARTED
     continueRoutine = True
@@ -1827,6 +1749,34 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
+        # *key_resp* updates
+        waitOnFlip = False
+        
+        # if key_resp is starting this frame...
+        if key_resp.status == NOT_STARTED and tThisFlip >= .2-frameTolerance:
+            # keep track of start time/frame for later
+            key_resp.frameNStart = frameN  # exact frame index
+            key_resp.tStart = t  # local t and not account for scr refresh
+            key_resp.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(key_resp, 'tStartRefresh')  # time at next scr refresh
+            # add timestamp to datafile
+            thisExp.timestampOnFlip(win, 'key_resp.started')
+            # update status
+            key_resp.status = STARTED
+            # keyboard checking is just starting
+            waitOnFlip = True
+            win.callOnFlip(key_resp.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
+        if key_resp.status == STARTED and not waitOnFlip:
+            theseKeys = key_resp.getKeys(keyList=['1','2','3','4','5', 'num_1', 'num_2', 'num_3', 'num_4', 'num_5'], ignoreKeys=["escape"], waitRelease=False)
+            _key_resp_allKeys.extend(theseKeys)
+            if len(_key_resp_allKeys):
+                key_resp.keys = _key_resp_allKeys[-1].name  # just the last key pressed
+                key_resp.rt = _key_resp_allKeys[-1].rt
+                key_resp.duration = _key_resp_allKeys[-1].duration
+                # a response ends the routine
+                continueRoutine = False
+        
         # *last_prompt_text* updates
         
         # if last_prompt_text is starting this frame...
@@ -1859,34 +1809,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 # update status
                 last_prompt_text.status = FINISHED
                 last_prompt_text.setAutoDraw(False)
-        
-        # *key_resp* updates
-        waitOnFlip = False
-        
-        # if key_resp is starting this frame...
-        if key_resp.status == NOT_STARTED and tThisFlip >= .2-frameTolerance:
-            # keep track of start time/frame for later
-            key_resp.frameNStart = frameN  # exact frame index
-            key_resp.tStart = t  # local t and not account for scr refresh
-            key_resp.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(key_resp, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'key_resp.started')
-            # update status
-            key_resp.status = STARTED
-            # keyboard checking is just starting
-            waitOnFlip = True
-            win.callOnFlip(key_resp.clock.reset)  # t=0 on next screen flip
-            win.callOnFlip(key_resp.clearEvents, eventType='keyboard')  # clear events on next screen flip
-        if key_resp.status == STARTED and not waitOnFlip:
-            theseKeys = key_resp.getKeys(keyList=['1','2','3','4','5', 'num_1', 'num_2', 'num_3', 'num_4', 'num_5'], ignoreKeys=["escape"], waitRelease=False)
-            _key_resp_allKeys.extend(theseKeys)
-            if len(_key_resp_allKeys):
-                key_resp.keys = _key_resp_allKeys[-1].name  # just the last key pressed
-                key_resp.rt = _key_resp_allKeys[-1].rt
-                key_resp.duration = _key_resp_allKeys[-1].duration
-                # a response ends the routine
-                continueRoutine = False
         
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -1945,15 +1867,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # create an object to store info about Routine GoodBye
     GoodBye = data.Routine(
         name='GoodBye',
-        components=[congrats_text, key_resp_end],
+        components=[congrats_text],
     )
     GoodBye.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
-    # create starting attributes for key_resp_end
-    key_resp_end.keys = []
-    key_resp_end.rt = []
-    _key_resp_end_allKeys = []
     # store start times for GoodBye
     GoodBye.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
     GoodBye.tStart = globalClock.getTime(format='float')
@@ -1977,7 +1895,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # --- Run Routine "GoodBye" ---
     thisExp.currentRoutine = GoodBye
     GoodBye.forceEnded = routineForceEnded = not continueRoutine
-    while continueRoutine:
+    while continueRoutine and routineTimer.getTime() < 5.0:
         # get current time
         t = routineTimer.getTime()
         tThisFlip = win.getFutureFlipTime(clock=routineTimer)
@@ -2008,7 +1926,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # if congrats_text is stopping this frame...
         if congrats_text.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > congrats_text.tStartRefresh + key_resp_end.status == FINISHED-frameTolerance:
+            if tThisFlipGlobal > congrats_text.tStartRefresh + 5-frameTolerance:
                 # keep track of stop time/frame for later
                 congrats_text.tStop = t  # not accounting for scr refresh
                 congrats_text.tStopRefresh = tThisFlipGlobal  # on global time
@@ -2018,34 +1936,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 # update status
                 congrats_text.status = FINISHED
                 congrats_text.setAutoDraw(False)
-        
-        # *key_resp_end* updates
-        waitOnFlip = False
-        
-        # if key_resp_end is starting this frame...
-        if key_resp_end.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            key_resp_end.frameNStart = frameN  # exact frame index
-            key_resp_end.tStart = t  # local t and not account for scr refresh
-            key_resp_end.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(key_resp_end, 'tStartRefresh')  # time at next scr refresh
-            # add timestamp to datafile
-            thisExp.timestampOnFlip(win, 'key_resp_end.started')
-            # update status
-            key_resp_end.status = STARTED
-            # keyboard checking is just starting
-            waitOnFlip = True
-            win.callOnFlip(key_resp_end.clock.reset)  # t=0 on next screen flip
-            win.callOnFlip(key_resp_end.clearEvents, eventType='keyboard')  # clear events on next screen flip
-        if key_resp_end.status == STARTED and not waitOnFlip:
-            theseKeys = key_resp_end.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
-            _key_resp_end_allKeys.extend(theseKeys)
-            if len(_key_resp_end_allKeys):
-                key_resp_end.keys = _key_resp_end_allKeys[-1].name  # just the last key pressed
-                key_resp_end.rt = _key_resp_end_allKeys[-1].rt
-                key_resp_end.duration = _key_resp_end_allKeys[-1].duration
-                # a response ends the routine
-                continueRoutine = False
         
         # check for quit (typically the Esc key)
         if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -2089,16 +1979,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     GoodBye.tStop = globalClock.getTime(format='float')
     GoodBye.tStopRefresh = tThisFlipGlobal
     thisExp.addData('GoodBye.stopped', GoodBye.tStop)
-    # check responses
-    if key_resp_end.keys in ['', [], None]:  # No response was made
-        key_resp_end.keys = None
-    thisExp.addData('key_resp_end.keys',key_resp_end.keys)
-    if key_resp_end.keys != None:  # we had a response
-        thisExp.addData('key_resp_end.rt', key_resp_end.rt)
-        thisExp.addData('key_resp_end.duration', key_resp_end.duration)
+    # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
+    if GoodBye.maxDurationReached:
+        routineTimer.addTime(-GoodBye.maxDuration)
+    elif GoodBye.forceEnded:
+        routineTimer.reset()
+    else:
+        routineTimer.addTime(-5.000000)
     thisExp.nextEntry()
-    # the Routine "GoodBye" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
     
     # mark experiment as finished
     endExperiment(thisExp, win=win)
